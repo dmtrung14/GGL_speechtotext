@@ -1,17 +1,18 @@
 from __future__ import division
 
+import os
 import re
 import sys
 
 import pyaudio
 from google.cloud import speech
-from google.cloud import storage
 from six.moves import queue
 
 # Audio recording parameters
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms
-GOOGLE_APPLICATION_CREDENTIALS = './Peepl-cb1dac99bdc0.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "client_service_key.json" #placeholder
+
 
 def authenticate_implicit_with_adc(project_id="your-google-cloud-project-id"):
     """
